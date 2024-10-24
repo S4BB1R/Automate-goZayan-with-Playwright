@@ -1,6 +1,28 @@
+
 # Playwright Automation README
 
 Welcome to the Playwright Automation project! This repository contains automated tests for web applications using Playwright. Follow the instructions below to set up your environment and run the tests.
+
+# This is the tree of this Playwright Automation Architecture 
+.
+├── node_modules
+├── package-lock.json
+├── package.json
+├── pages
+│   ├── basePage.js
+│   ├── homePage.js
+│   ├── tourPage.js
+│   └── tourdetailsPage.js
+├── playwright-report
+├── playwright.config.js
+├── tests
+│   └── tour.spec.js
+├── tests-examples
+│   └── demo-todo-app.spec.js
+└── utils
+    ├── apiRequest.js
+    └── helpers.js
+
 
 ## Prerequisites
 
