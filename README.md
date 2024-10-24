@@ -3,25 +3,27 @@
 
 Welcome to the Playwright Automation project! This repository contains automated tests for web applications using Playwright. Follow the instructions below to set up your environment and run the tests.
 
-# This is the tree of this Playwright Automation Architecture 
-.
-├── node_modules
-├── package-lock.json
-├── package.json
-├── pages
-│   ├── basePage.js
-│   ├── homePage.js
-│   ├── tourPage.js
-│   └── tourdetailsPage.js
-├── playwright-report
-├── playwright.config.js
-├── tests
-│   └── tour.spec.js
-├── tests-examples
-│   └── demo-todo-app.spec.js
-└── utils
-    ├── apiRequest.js
-    └── helpers.js
+
+## Description
+
+- **node_modules**: Contains all the npm dependencies.
+- **package-lock.json**: Auto-generated file that holds the version of installed packages.
+- **package.json**: Contains project dependencies and scripts.
+- **pages**: Includes page object files for Playwright.
+  - `basePage.js`: Base page with common methods.
+  - `homePage.js`: Page object model for the Home page.
+  - `tourPage.js`: Page object model for the Tour page.
+  - `tourdetailsPage.js`: Page object model for the Tour Details page.
+- **playwright-report**: Directory where Playwright test reports are stored.
+- **playwright.config.js**: Configuration file for Playwright.
+- **tests**: Contains test specification files.
+  - `tour.spec.js`: Test suite for the Tour functionality.
+- **tests-examples**: Example test cases.
+  - `demo-todo-app.spec.js`: Sample Playwright test for a demo to-do app.
+- **utils**: Utility functions and API request handling.
+  - `apiRequest.js`: Helper for making API requests.
+  - `helpers.js`: Utility functions used across the project.
+
 
 
 ## Prerequisites
