@@ -1,13 +1,15 @@
 const BasePage = require('./basePage');
-
+const { expect } = require('@playwright/test');
 class TourDetails extends BasePage {
     constructor(page) {
         super(page);
         this.page = page;
-        this.itinerary = 'li[data-v-fb0eb17e]:has-text("Itinerary")';
+        this.itinerary = 'li:has-text("Itinerary")';
         this.itineraryDaySelector = '.itinerary-day';
         this.mealSelector = '.meal';
         this.itineraryDetailsSelector = '#itinerary-details';
+        this.itineraryItem = this.page.locator('li', { hasText: 'Itinerary' });
+        this.itinerarySelector = '.itinerary-card-wrapper';
     }
 
     async verifyMeals() {
@@ -25,6 +27,11 @@ class TourDetails extends BasePage {
         for (const day of days) {
             const daySelector = `h4.day-title:has-text("${day}")`;
             const isDayVisible = await this.page.isVisible(daySelector);
+            await this.page.click(daySelector);
+            const itineraryContent = await this.page.locator(this.itinerarySelector).innerText();
+            expect(itineraryContent).toContain('Breakfast');
+            expect(itineraryContent).toContain('Lunch');
+       //    expect(itineraryContent).toContain('Dinner');
             console.log(`${day} is visible: ${isDayVisible}`);
         }
 
