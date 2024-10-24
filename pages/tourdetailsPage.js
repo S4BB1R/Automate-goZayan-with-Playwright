@@ -17,7 +17,7 @@ class TourDetails extends BasePage {
         await this.page.waitForSelector(this.itineraryDetailsSelector, { state: 'visible' });
 
 
-        const isItineraryVisible = await this.page.isVisible(itineraryDetailsSelector);
+        const isItineraryVisible = await this.page.isVisible(this.itineraryDetailsSelector);
         console.log(`Itinerary details are visible: ${isItineraryVisible}`);
 
 

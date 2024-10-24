@@ -12,13 +12,14 @@ test.describe('Tour Search Tests', () => {
     let tourPage;
     let helpers;
     let tourDetails;
-    let context;
+    let context ;
 
 
     test.beforeAll(async () => {
         browser = await chromium.launch({ headless: false });
-        const context = await browser.newContext();
+        context = await browser.newContext();
         page = await context.newPage();
+        
         homePage = new HomePage(page);
         tourPage = new TourPage(page);
         helpers = new Helpers(page);
@@ -53,10 +54,12 @@ test.describe('Tour Search Tests', () => {
         await tourPage.checkEcoTourTags();
         await helpers.scrollToTop();
 
-        const pagePromise = await context.waitForEvent(page);
+        
         await tourPage.clickOnFirstTourCard();
-        const newpage = await pagePromise;
+        const page2Promise = page.waitForEvent('popup');
+        const page2 = await page2Promise;
 
+        tourDetails = new TourDetails(page2);
         await tourDetails.verifyMeals();
     });
 });
