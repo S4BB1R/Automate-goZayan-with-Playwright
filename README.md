@@ -71,5 +71,3 @@ npx playwright test
 ```
 
 
-Reported bug for manual TEST :
-https://docs.google.com/spreadsheets/d/1uPHd3303TG0iz7EyR6uNC0RVGOOFmEfbkSexBCDEHh8/edit?usp=sharing  
